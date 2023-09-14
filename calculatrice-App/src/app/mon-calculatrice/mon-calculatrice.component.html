@@ -4,52 +4,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon calculatrice</title>
+  <title>Ma calculatrice</title>
 </head>
 
-<body>
-  <div class="container">
-    <h1>Ma Calculatrice</h1>
-    <form action="">
-      <input type="text" id="display" readonly>
-    </form>
-  </div>
-  <div class="buttons">
-    <div class="operators row">
-       <div class="col-auto"></div>
-      <button class="btn">+</button>
-      <button class="btn">-</button>
-      <button class="btn">*</button>
-      <button (click)="buttonClick($event.target)" class="btn">/</button>
-      <button (click)="calculate()" class="btn tbn-success">=</button>
-    </div>
-    </div>
-    <div class="operands row">
-      <div class="col-auto">
-        <button class="btn">1</button>
-        <button class="btn">2</button>
-        <button class="btn">3</button>
-      </div>
-    </div>
-    <div class="operands row">
-      <div class="col-auto">
-        <button class="btn">4</button>
-        <button class="btn">5</button>
-        <button class="btn">6</button>
-      </div>
-    </div>
-    <div class="operands row">
-      <div class="col-auto">
-        <button class="btn">7</button>
-        <button class="btn">8</button>
-        <button class="btn">9</button>
-      </div>
-    </div>
-    <div class="row">
-      <button class="btn">C</button>
-      <button class="btn">=</button>
-    </div>
-  </div>
-</body>
 
+  <body>
+    <div class="container pt-5">
+      <div class="display">
+        <form [formGroup]="inputStr">
+             <input type="text" formControlName="text">
+        </form>
+      </div>
+          <div class="buttons">
+              <div class="operators row">
+                <div class="col-auto">
+                  <button (click)="buttonClick($event.target)" class="btn btn-info">+</button>
+                  <button (click)="buttonClick($event.target)" class="btn btn-info">-</button>
+                  <button (click)="buttonClick($event.target)" class="btn btn-info">*</button>
+                  <button (click)="buttonClick($event.target)" class="btn btn-info">/</button>
+                  <button (click)="buttonClick($event.target)" class="btn btn-info">%</button>
+                </div>
+            </div>
+
+          <div class="operands row">
+              <div class="col-auto">
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">1</button>
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">2</button>
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">3</button>
+                <button (click)="clearDisplay()" class="btn btn-danger">C</button>
+                <button (click)="deleteLast()" class="btn btn-danger">X</button>
+              </div>
+          </div>
+          <div class="operands row">
+            <div class="col-auto">
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">4</button>
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">5</button>
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">6</button>
+                <button (click)="buttonClick($event.target)" class="btn btn-warning">0</button>
+                <button (click)="calculate()" class="btn btn-success">=</button>
+            </div>
+          </div>
+        <div class="operands row">
+          <div class="col-auto">
+              <button (click)="buttonClick($event.target)" class="btn btn-warning">7</button>
+              <button (click)="buttonClick($event.target)" class="btn btn-warning">8</button>
+              <button (click)="buttonClick($event.target)" class="btn btn-warning">9</button>
+              <button (click)="buttonClick($event.target)" class="btn btn-warning">.</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

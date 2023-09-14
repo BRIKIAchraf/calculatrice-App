@@ -1,15 +1,17 @@
-.btn{
+ .btn{
   margin :4px;
   height: 44px;
   width: 44px;
   font-weight: 700;
 }
-.conatainer {
+ .conatainer {
   width: 50%;
   display: block;
   margin: auto;
 }
-.input{
-  height: 44px;
-  border-radius: 8px;
+ input{
+  width:75%;
+  height:44px;
+  border-radius:8px;
+  padding:16px;
 }
